@@ -2,4 +2,5 @@
 
 ## Contributors
 - Josh McLain (Team Lead)
-- Joshua Beets (developer)
+- Joshua Beets (Developer)
+- Ashley Thomas (Developer)
