@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, CardsWrapper, Card, Text } from './style';
 
+
 const SampleComponent = () => {
     return (
         <Container>
