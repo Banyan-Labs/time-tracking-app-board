@@ -1,5 +1,11 @@
 # time-tracking-app
 
+## Deployed
+
+This app is deployed to Heroku from the `main` branch at url
+
+### `https://tta-frontend.herokuapp.com/`
+
 ## How to Use
 
 For development first you'll need to clone the repo. On your local machine open a terminal in to desired file path location and run command
