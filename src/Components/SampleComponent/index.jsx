@@ -6,7 +6,10 @@ const SampleComponent = () => {
         <Container>
             <CardsWrapper>
                 <Card>
-                    <Text>42</Text>
+                    <Text fontSize={24}>24</Text>
+                </Card>
+                <Card>
+                    <Text fontSize={42}>42</Text>
                 </Card>
             </CardsWrapper>
         </Container>

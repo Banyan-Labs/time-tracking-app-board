@@ -1,16 +1,24 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import AppRoute from "./routes/AppRoute";
+import routes from "./routes";
 
 const App = () => {
   return (
-   <Router>
-     <Switch>
-       <Route path='/' exact component={() => <h1>Time Tracking App Banyan</h1>} />
-       <Route path='/welcome' exact component={() => <h1>Welcome T-tab Team!</h1>} />
-     </Switch>
-   </Router>
-  )
-}
+    <Router>
+      <Switch>
+        {routes.map((route, index) => (
+          <AppRoute
+            isProtected={route.isProtected}
+            exact={true}
+            key={index}
+            path={route.path}
+            component={route.component}
+          />
+        ))}
+      </Switch>
+    </Router>
+  );
+};
 
-export default App
-
+export default App;
