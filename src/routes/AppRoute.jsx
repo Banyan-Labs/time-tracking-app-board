@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import Navbar from "../Components/Navbar/Navbar";
+import Navbar from "../Components/Navbar";
 
 const AppRoute = ({ isProtected, ...rest }) => {
   const isAuth = true;
