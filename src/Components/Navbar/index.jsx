@@ -1,11 +1,28 @@
-import React from "react";
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from "./NavbarStyle";
+import React, { useState } from "react";
+import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink, NavModal } from "./style";
+import DropDownNav from "./DropDownNav";
 
 const Navbar = () => {
+
+const [isOpen, setIsOpen] = useState(false);
+
+
+const toggleIsOpen = () => setIsOpen(!isOpen)
+
+
   return (
     <Nav>
-      <Bars />
+      <Bars onClick={toggleIsOpen} />
 
+
+		{/* {isOpen&&<div>test2</div>} */}
+
+
+		<NavModal isOpen={isOpen}> 
+		<DropDownNav />
+		</NavModal> 
+
+		
       <NavMenu>
         <NavLink to="/about" activeStyle>
           About

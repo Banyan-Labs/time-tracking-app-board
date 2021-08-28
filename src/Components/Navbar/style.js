@@ -1,4 +1,4 @@
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaDownload } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -72,5 +72,59 @@ export const NavBtnLink = styled(Link)`
     transition: all 0.2s ease-in-out;
     background: #fff;
     color: #808080;
+  }
+`;
+
+// dropdown
+
+export const NavModal = styled.div`
+display: ${({isOpen}) => (isOpen ? "block" : "none")};
+`;
+
+export const Dropdown = styled.div`
+  display: block;
+  position: absolute;
+  right: 8.2px;
+  width: 100px;
+  height: auto;
+  background: white;
+  top: 60px;
+  border: 1px solid black;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const DropdownMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+`;
+
+export const DropdownLink = styled(Link)`
+  color: #808080;
+  width: 100%;
+  margin-left: 4px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: .5rem 1rem;
+  height: 100%;
+  cursor: pointer;
+  &.active {
+    color: #000000;
+  }
+`;
+
+export const DropdownBtn = styled.nav`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    display: none;
   }
 `;
