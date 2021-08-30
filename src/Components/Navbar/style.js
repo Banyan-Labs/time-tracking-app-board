@@ -1,4 +1,4 @@
-import { FaBars, FaDownload } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -27,7 +27,7 @@ export const NavLink = styled(Link)`
 export const Bars = styled(FaBars)`
   display: none;
   color: #808080;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 400px) {
     display: block;
     position: absolute;
     top: 0;
@@ -42,7 +42,7 @@ export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   margin-right: -24px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 400px) {
     display: none;
   }
 `;
@@ -51,7 +51,7 @@ export const NavBtn = styled.nav`
   display: flex;
   align-items: center;
   margin-right: 24px;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 400px) {
     display: none;
   }
 `;
@@ -78,7 +78,7 @@ export const NavBtnLink = styled(Link)`
 // dropdown
 
 export const NavModal = styled.div`
-display: ${({isOpen}) => (isOpen ? "block" : "none")};
+  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
 `;
 
 export const Dropdown = styled.div`
@@ -90,7 +90,7 @@ export const Dropdown = styled.div`
   background: white;
   top: 60px;
   border: 1px solid black;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 400px) {
     display: none;
   }
 `;
@@ -99,7 +99,7 @@ export const DropdownMenu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 400px) {
     display: none;
   }
 `;
@@ -111,7 +111,7 @@ export const DropdownLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   height: 100%;
   cursor: pointer;
   &.active {
@@ -124,7 +124,7 @@ export const DropdownBtn = styled.nav`
   align-items: center;
   margin-right: 24px;
   width: 100%;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 400px) {
     display: none;
   }
 `;
