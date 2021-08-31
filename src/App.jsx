@@ -1,30 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
-import AppRoute from "./routes/AppRoute";
-import routes from "./routes";
-import { AuthProvider } from "./Context/AuthContext";
+import React from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
+import AppRoute from './routes/AppRoute';
+import routes from './routes';
 
-const App = () => {
-
-  console.log(AuthProvider())
-  return (
-
-    <AuthProvider>
-    <Router>
-      <Switch>
-        {routes.map((route, index) => (
-          <AppRoute
-            isProtected={route.isProtected}
-            exact={true}
-            key={index}
-            path={route.path}
-            component={route.component}
-          />
-        ))}
-      </Switch>
-    </Router>
-    </AuthProvider>
-  );
-};
+const App = () => (
+  <Router>
+    <Switch>
+      {routes.map((route) => (
+        <AppRoute
+          isProtected={route.isProtected}
+          exact
+          key={uuid()}
+          path={route.path}
+          component={route.component}
+        />
+      ))}
+    </Switch>
+  </Router>
+);
 
 export default App;
