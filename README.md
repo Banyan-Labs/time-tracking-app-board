@@ -33,5 +33,6 @@ run command `npm start`
 ## Contributors
 
 - Josh McLain (Team Lead)
-- Joshua Beets (Developer)
 - Ashley Thomas (Developer)
+- James Gonzles (Developer)
+- Joshua Beets (Developer)
