@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Nav,
   NavLink,
@@ -7,8 +7,8 @@ import {
   NavBtn,
   NavBtnLink,
   NavModal,
-} from "./style";
-import DropDownNav from "./DropDownNav";
+} from './style';
+import DropDownNav from './DropDownNav';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +23,13 @@ const Navbar = () => {
         <DropDownNav />
       </NavModal>
       <NavMenu>
-        <NavLink to="/">Homepage</NavLink>
-        <NavLink to="/sign-up">Sign Up</NavLink>
-        <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to='/'>Homepage</NavLink>
+        <NavLink to='/sign-up'>Sign Up</NavLink>
+        <NavLink to='/dashboard'>Dashboard</NavLink>
         {/* Second Nav */}
       </NavMenu>
       <NavBtn>
-        <NavBtnLink to="/sign-in">Sign In</NavBtnLink>
+        <NavBtnLink to='/sign-in'>Sign In</NavBtnLink>
       </NavBtn>
     </Nav>
   );

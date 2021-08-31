@@ -1,28 +1,22 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import Navbar from "../Components/Navbar";
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
 
 const AppRoute = ({ isProtected, ...rest }) => {
   const isAuth = true;
   return (
-
     <>
-
-<Navbar />
-    <Route
-      render={(props) =>
-        isProtected && !isAuth ? (
-          <Redirect
-            to={{ pathname: "/sign-in", state: { from: props.location } }}
-          />
-
-     
-        ) : (
-          <Route {...rest} />
-        )
-      }
-    />
-
+      <Navbar />
+      <Route
+        render={(props) =>
+          isProtected && !isAuth ? (
+            <Redirect
+              to={{ pathname: '/sign-in', state: { from: props.location } }}
+            />
+          ) : (
+            <Route {...rest} />
+          )
+        }
+      />
     </>
   );
 };

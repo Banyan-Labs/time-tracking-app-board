@@ -1,6 +1,6 @@
-import { FaBars } from "react-icons/fa";
-import { NavLink as Link } from "react-router-dom";
-import styled from "styled-components";
+import { FaBars } from 'react-icons/fa';
+import { NavLink as Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const Nav = styled.nav`
   background: #63d471;
@@ -78,7 +78,7 @@ export const NavBtnLink = styled(Link)`
 // dropdown
 
 export const NavModal = styled.div`
-  display: ${({ isOpen }) => (isOpen ? "block" : "none")};
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
 `;
 
 export const Dropdown = styled.div`
