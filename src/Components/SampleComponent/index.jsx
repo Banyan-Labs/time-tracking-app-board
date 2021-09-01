@@ -4,7 +4,6 @@ import { v4 as uuid } from 'uuid';
 import { Container, CardsWrapper, Card, Text } from './style';
 import { AuthContext } from '../../Context/AuthContext';
 import routes from '../../routes';
-import Button from '../commons/GenericButton';
 
 const SampleComponent = () => {
   const history = useHistory();
