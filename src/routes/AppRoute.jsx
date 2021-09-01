@@ -1,14 +1,15 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import React, { useContext } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
 
 const AppRoute = ({ isProtected, ...rest }) => {
-  const isAuth = true;
+  const store = useContext(AuthContext);
   return (
     <Route
       render={(props) =>
-        isProtected && !isAuth ? (
+        isProtected && !store.isAuth ? (
           <Redirect
-            to={{ pathname: "/sign-in", state: { from: props.location } }}
+            to={{ pathname: '/sign-in', state: { from: props.location } }}
           />
         ) : (
           <Route {...rest} />

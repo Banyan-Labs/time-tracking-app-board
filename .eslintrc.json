@@ -1,0 +1,9 @@
+{
+  "extends": ["prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "react/button-has-type": "warn",
+    "react/jsx-filename-extension": "warn",
+    "react/react-in-jsx-scope": "warn"
+  }
+}
