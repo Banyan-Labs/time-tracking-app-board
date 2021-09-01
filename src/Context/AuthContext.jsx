@@ -6,9 +6,9 @@ export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [isAuth, setIsAuth] = useState(true);
 
-  var w = window.innerWidth;
+  var widthOfDom = window.innerWidth;
 
-  const [isMobile, setIsMobile] = useState(w <= 400 ? true : false);
+  const isMobile = widthOfDom <= 400 ? true : false;
 
   console.log(isMobile, 'test');
 
