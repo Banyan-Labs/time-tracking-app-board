@@ -8,7 +8,6 @@ import { GlobalStyle } from './style';
 
 const App = () => (
   <AuthProvider>
-
     <GlobalStyle />
     <Router>
       <Switch>
