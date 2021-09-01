@@ -12,7 +12,6 @@ const SampleComponent = () => {
 
   return (
     <Container>
-      <Button text={'nope'} />
       <CardsWrapper>
         {routes.map((route) => (
           <Card key={uuid()} onClick={() => history.push(`${route.path}`)}>
