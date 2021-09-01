@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import { Container, CardsWrapper, Card, Text } from './style';
 import { AuthContext } from '../../Context/AuthContext';
 import routes from '../../routes';
+import Button from '../commons/GenericButton';
 
 const SampleComponent = () => {
   const history = useHistory();
@@ -11,6 +12,7 @@ const SampleComponent = () => {
 
   return (
     <Container>
+      <Button text={'nope'} />
       <CardsWrapper>
         {routes.map((route) => (
           <Card key={uuid()} onClick={() => history.push(`${route.path}`)}>
