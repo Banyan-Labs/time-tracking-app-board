@@ -9,12 +9,10 @@ const SampleComponent = () => {
   const history = useHistory();
   const store = useContext(AuthContext);
 
-  var w = window.innerWidth;
-
+  console.log(store);
   return (
     <Container>
       <CardsWrapper>
-        {console.log(w)}
         {routes.map((route) => (
           <Card key={uuid()} onClick={() => history.push(`${route.path}`)}>
             <Text fontSize={28}>{route.path}</Text>
