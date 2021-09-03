@@ -9,7 +9,6 @@ const SampleComponent = () => {
   const history = useHistory();
   const store = useContext(AuthContext);
 
-  console.log(store);
   return (
     <Container>
       <CardsWrapper>
