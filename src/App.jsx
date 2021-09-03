@@ -5,6 +5,7 @@ import AppRoute from './routes/AppRoute';
 import { AuthProvider } from './Context/AuthContext';
 import routes from './routes';
 import { GlobalStyle } from './styles/GlobalStyles';
+import SignIn from './Components/userComfermation/SignIn/index';
 
 const App = () => (
   <AuthProvider>
@@ -22,6 +23,7 @@ const App = () => (
         ))}
       </Switch>
     </Router>
+    <SignIn />
   </AuthProvider>
 );
 
