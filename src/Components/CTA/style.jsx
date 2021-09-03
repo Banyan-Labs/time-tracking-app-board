@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 
+export const Container = styled.section`
+    text-align: center;
+    padding: 10px, 20px, 10px, 20px;
+`;
 
+ 
 export const Title = styled.h1`
     font-family: Georgia;
     font-size: 52px;

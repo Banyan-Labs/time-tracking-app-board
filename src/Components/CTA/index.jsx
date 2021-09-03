@@ -1,22 +1,24 @@
 import React from 'react';
 import {Title, Description, Button} from './style.';
+import { useHistory } from "react-router-dom";
 
-const activateSignup = () => {
-    e.preventDefault();
-    console.log("button clicked")
-}
+
+  function handleClick() {
+    let history = useHistory();
+    history.push("/sign-up");
+  }
 
 const CtaComponent = () => {
     return (
-        <section>
+        <Container>
             <Title>TIME TAB</Title>
             <Description>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non quis exercitationem culpa nesciunt nihil aut nostrum explicabo reprehenderit optio amet ab temporibus asperiores quasi cupiditate. Voluptatum ducimus voluptates voluptas?</Description>
 
-            <Button onClick={activateSignup}>
+            <Button type="button" onClick={handleClick}>
                 Sign-Up
             </Button>
 
-        </section>
+        </Container>
 
     )
 }
