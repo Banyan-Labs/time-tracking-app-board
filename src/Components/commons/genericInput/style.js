@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 export const InputStyle = styled.input`
   background: ${({ backgroundColor }) =>
     backgroundColor ? `${background}` : '#FA0'};

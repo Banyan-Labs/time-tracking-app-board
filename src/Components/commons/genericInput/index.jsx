@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputStyle } from './style';
 
-const GenericButton = ({
+const GenericInput = ({
   placeholder,
   text,
   onChange,
@@ -18,4 +18,4 @@ const GenericButton = ({
   </InputStyle>
 );
 
-export default GenericButton;
+export default GenericInput;
