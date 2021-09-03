@@ -5,11 +5,13 @@ import AppRoute from './routes/AppRoute';
 import { AuthProvider } from './Context/AuthContext';
 import routes from './routes';
 import { GlobalStyle } from './styles/GlobalStyles';
+import Navbar from './Components/Navbar';
 
 const App = () => (
   <AuthProvider>
     <GlobalStyle />
     <Router>
+      <Navbar />
       <Switch>
         {routes.map((route) => (
           <AppRoute

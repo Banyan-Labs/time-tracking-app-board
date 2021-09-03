@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 export const AuthContext = createContext();
 
@@ -17,4 +18,8 @@ export const AuthProvider = ({ children }) => {
   };
 
   return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
+};
+
+AuthProvider.propTypes = {
+  children: PropTypes.element,
 };
