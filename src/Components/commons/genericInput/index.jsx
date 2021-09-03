@@ -4,12 +4,12 @@ import { InputStyle } from './style';
 const GenericButton = ({
   placeholder,
   text,
-  onClick,
+  onChange,
   backgroundColor,
   isBlock,
 }) => (
   <InputStyle
-    onCLick={onClick}
+    onChange={onChange}
     backgroundColor={backgroundColor}
     isBlock={isBlock}
     placeholder={placeholder}

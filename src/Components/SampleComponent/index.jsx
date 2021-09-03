@@ -4,7 +4,6 @@ import { v4 as uuid } from 'uuid';
 import { Container, CardsWrapper, Card, Text } from './style';
 import { AuthContext } from '../../Context/AuthContext';
 import routes from '../../routes';
-import GenericInput from '../commons/GenericButton/GenericInput';
 
 const SampleComponent = () => {
   const history = useHistory();
@@ -12,7 +11,6 @@ const SampleComponent = () => {
 
   return (
     <Container>
-      <GenericInput />
       <CardsWrapper>
         {routes.map((route) => (
           <Card key={uuid()} onClick={() => history.push(`${route.path}`)}>
