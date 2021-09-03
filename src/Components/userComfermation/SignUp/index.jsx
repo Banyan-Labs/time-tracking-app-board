@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Card } from './style';
 import Input from '../../commons/GenericInput/index';
+import Button from '../../commons/GenericButton/index';
 import { AuthContext } from '../../../Context/AuthContext';
 
 const SignUp = () => {
@@ -12,35 +13,43 @@ const SignUp = () => {
     confirmPassword: '',
   });
 
+  //   having trouble thinking about how the handleChange works will have it tho
+  //   const handleChange = () => {
+
+  //   }
+
   const store = useContext(AuthContext);
 
   return (
     <Card>
       <Input
         placeholder={'First Name'}
-        value={state.firstName}
-        onChange={handleChange}
+        value={user.firstName}
+        // onChange={handleChange}
       />
       <Input
         placeholder={'Last Name'}
-        value={state.lastName}
-        onChange={handleChange}
+        value={user.lastName}
+        // onChange={handleChange}
       />
       <Input
         placeholder={'Email Address'}
-        value={state.emailAddress}
-        onChange={handleChange}
+        value={user.emailAddress}
+        // onChange={handleChange}
       />
       <Input
         placeholder={'Password'}
-        value={state.password}
-        onChange={handleChange}
+        value={user.password}
+        // onChange={handleChange}
       />
       <Input
         placeholder={'Confirm Password'}
-        value={state.confirmPassword}
-        onChange={handleChange}
+        value={user.confirmPassword}
+        // onChange={handleChange}
       />
+      <Button text={'Submit'} />
+      <Button text={'facebook'} />
+      <Button text={'google'} />
     </Card>
   );
 };
