@@ -7,9 +7,11 @@ const AppRoute = ({ isProtected, ...rest }) => {
   const store = useContext(AuthContext);
   return (
     <Route
-      render={({ location }) =>
+      render={(props) =>
         isProtected && !store.isAuth ? (
-          <Redirect to={{ pathname: '/sign-in', state: { from: location } }} />
+          <Redirect
+            to={{ pathname: '/sign-in', state: { from: props.location } }}
+          />
         ) : (
           <Route {...rest} />
         )
@@ -22,5 +24,5 @@ export default AppRoute;
 
 AppRoute.propTypes = {
   isProtected: PropTypes.bool,
-  location: PropTypes.string,
+  location: PropTypes.object,
 };

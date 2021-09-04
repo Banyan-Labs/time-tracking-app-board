@@ -1,37 +1,63 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
 import {
-  Nav,
-  NavLink,
-  Bars,
-  NavMenu,
-  NavBtn,
-  NavBtnLink,
-  NavModal,
+  CloseButton,
+  LogoImage,
+  LogoTitle,
+  LogoWrapper,
+  MobileLinksLayout,
+  MobileNavMenuButton,
+  NavbarContainer,
+  NavLinkItem,
+  NavLinksWrapper,
 } from './style';
-import DropDownNav from './DropDownNav';
+import { AuthContext } from '../../Context/AuthContext';
+import Image from '../../resources/images/clockLogo1.png';
 
 const Navbar = () => {
+  const store = useContext(AuthContext);
+  const [isMobile] = useState(store.isMobile);
   const [isOpen, setIsOpen] = useState(false);
+  const [navLinks] = useState(
+    store.isAuth ? ['/dashboard'] : ['/sign-in', '/sign-up']
+  );
+  const history = useHistory();
 
   const toggleIsOpen = () => setIsOpen(!isOpen);
 
   return (
-    <Nav>
-      <Bars onClick={toggleIsOpen} />
-
-      <NavModal isOpen={isOpen}>
-        <DropDownNav />
-      </NavModal>
-      <NavMenu>
-        <NavLink to='/'>Homepage</NavLink>
-        <NavLink to='/sign-up'>Sign Up</NavLink>
-        <NavLink to='/dashboard'>Dashboard</NavLink>
-        {/* Second Nav */}
-      </NavMenu>
-      <NavBtn>
-        <NavBtnLink to='/sign-in'>Sign In</NavBtnLink>
-      </NavBtn>
-    </Nav>
+    <NavbarContainer>
+      <LogoWrapper onClick={() => history.push('/')}>
+        <LogoImage src={Image} />
+        <LogoTitle>Time Tab</LogoTitle>
+      </LogoWrapper>
+      {!isMobile ? (
+        <NavLinksWrapper>
+          {navLinks.map((link) => (
+            <NavLinkItem to={link} key={uuid()}>
+              {link.replace(/./g, (x, i) =>
+                /\//.test(x) ? '' : i === 1 ? x.toUpperCase() : x
+              )}
+            </NavLinkItem>
+          ))}
+        </NavLinksWrapper>
+      ) : (
+        <MobileNavMenuButton onClick={toggleIsOpen} />
+      )}
+      {isMobile && (
+        <MobileLinksLayout className={isOpen ? '' : 'closed'}>
+          <CloseButton onClick={toggleIsOpen} />
+          {navLinks.map((link) => (
+            <NavLinkItem to={link} key={uuid()} onClick={toggleIsOpen}>
+              {link.replace(/./g, (x, i) =>
+                /\//.test(x) ? '' : i === 1 ? x.toUpperCase() : x
+              )}
+            </NavLinkItem>
+          ))}
+        </MobileLinksLayout>
+      )}
+    </NavbarContainer>
   );
 };
 

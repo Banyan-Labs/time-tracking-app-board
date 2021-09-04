@@ -1,13 +1,18 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [isAuth, setIsAuth] = useState(true);
+  const [isAuth, setIsAuth] = useState(false);
 
-  const isMobile = window.innerWidth <= 400;
+  /* isMobile is not updating on active window resizing */
+  // const isMobile = window.innerWidth < 425;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 425);
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 425);
+  }, [window.innerWidth]);
 
   const state = {
     currentUser,
@@ -21,5 +26,5 @@ export const AuthProvider = ({ children }) => {
 };
 
 AuthProvider.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.array,
 };

@@ -1,130 +1,86 @@
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { colors } from '../../styles/Color';
 
-export const Nav = styled.nav`
-  background: #63d471;
-  height: 85px;
+export const NavbarContainer = styled.nav`
+  background: ${colors.green};
+  height: 80px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
+  overflow: hidden;
 `;
 
-export const NavLink = styled(Link)`
-  color: #808080;
+export const LogoWrapper = styled.div`
   display: flex;
   align-items: center;
-  text-decoration: none;
-  padding: 0 1rem;
-  height: 100%;
   cursor: pointer;
-  &.active {
-    color: #000000;
-  }
 `;
 
-export const Bars = styled(FaBars)`
-  display: none;
+export const LogoImage = styled.img`
+  height: 35px;
+  width: 35px;
+  margin: 0 8px 0 16px;
+`;
+
+export const LogoTitle = styled.span`
+  font-family: 'Audiowide';
+  font-size: clamp(18px, 10vw, 24px);
+`;
+
+export const NavLinksWrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+export const NavLinkItem = styled(Link)`
+  font-family: 'Roboto';
+  font-size: clamp(18px, 4vw, 18px);
+  font-weight: 300;
+  padding: 12px;
   color: black;
-  @media screen and (max-width: 400px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+
+  &.active {
+    font-weight: 500;
+  }
+
+  &:hover {
+    transform: scale(1.15);
     cursor: pointer;
   }
 `;
 
-export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: -24px;
-  @media screen and (max-width: 400px) {
-    display: none;
-  }
-`;
-
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
+export const MobileNavMenuButton = styled(FaBars)`
+  font-size: 2.4rem;
   margin-right: 24px;
-  @media screen and (max-width: 400px) {
-    display: none;
-  }
 `;
 
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #808080;
-  padding: 10px 22px;
-  color: #000000;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-  /* Second Nav */
-  margin-left: 24px;
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #808080;
-  }
-`;
-
-// dropdown
-
-export const NavModal = styled.div`
-  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-`;
-
-export const Dropdown = styled.div`
-  display: block;
+export const CloseButton = styled(FaTimes)`
+  font-size: 2.4rem;
   position: absolute;
-  right: 8.2px;
-  width: 100px;
-  height: auto;
-  background: white;
-  top: 60px;
-  border: 1px solid black;
-  @media screen and (min-width: 400px) {
-    display: none;
-  }
+  top: 34px;
+  text-align: end;
+  width: 100%;
 `;
 
-export const DropdownMenu = styled.div`
+export const MobileLinksLayout = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  @media screen and (min-width: 400px) {
-    display: none;
-  }
-`;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: ${colors.white};
+  width: 250px;
+  padding: 150px 30px 20px;
+  transition: all 0.2s ease-in;
 
-export const DropdownLink = styled(Link)`
-  color: #808080;
-  width: 100%;
-  margin-left: 4px;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  height: 100%;
-  cursor: pointer;
-  &.active {
-    color: #000000;
-  }
-`;
-
-export const DropdownBtn = styled.nav`
-  display: flex;
-  align-items: center;
-  margin-right: 24px;
-  width: 100%;
-  @media screen and (min-width: 400px) {
-    display: none;
+  &.closed {
+    transform: translateY(-350px);
   }
 `;

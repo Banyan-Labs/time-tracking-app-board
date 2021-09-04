@@ -8,6 +8,8 @@ import routes from '../../routes';
 const SampleComponent = () => {
   const history = useHistory();
   const store = useContext(AuthContext);
+  // for development testing
+  console.log(store);
 
   return (
     <Container>
@@ -17,7 +19,6 @@ const SampleComponent = () => {
             <Text fontSize={28}>{route.path}</Text>
           </Card>
         ))}
-        {console.log(store)}
       </CardsWrapper>
     </Container>
   );
