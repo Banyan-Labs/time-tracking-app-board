@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 
+export const PageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: burlywood;
+  padding: 25px 15px;
+`;
 export const Container = styled.div`
   display: flex;
   justify-content: center;

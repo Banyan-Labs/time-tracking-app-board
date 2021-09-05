@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import { Container, CardsWrapper, Card, Text } from './style';
-import { AuthContext } from '../../Context/AuthContext';
+// import { AuthContext } from '../../Context/AuthContext';
 import routes from '../../routes';
 
 const SampleComponent = () => {
   const history = useHistory();
-  const store = useContext(AuthContext);
-  // for development testing
-  console.log(store);
-
+  /* for development testing need to import useContext from react
+  // const store = useContext(AuthContext);
+  // console.log(store);
+  */
   return (
     <Container>
       <CardsWrapper>
