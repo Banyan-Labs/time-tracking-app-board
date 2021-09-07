@@ -7,8 +7,9 @@ import SignInPage from '../Pages/SignInPage';
 const routes = [
   { path: '/', component: LandingPage, isProtected: false },
   { path: '/sign-up', component: SignUpPage, isProtected: false },
-  { path: '/sign-in', component: SidnInPage, isProtected: false },
+  { path: '/sign-in', component: SignInPage, isProtected: false },
   { path: '/dashboard', component: DashboardPage, isProtected: false },
+  { path: '/dev', component: SampleComponent, isProtected: false },
 ];
 
 export default routes;

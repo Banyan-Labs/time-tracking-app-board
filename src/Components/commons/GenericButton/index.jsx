@@ -1,9 +1,10 @@
 import React from 'react';
 import { ButtonStyle } from './style';
+import PropTypes from 'prop-types';
 
 const GenericButton = ({ text, onClick, backgroundColor, isBlock }) => (
   <ButtonStyle
-    onCLick={onClick}
+    onClick={onClick}
     backgroundColor={backgroundColor}
     isBlock={isBlock}
   >
@@ -12,3 +13,10 @@ const GenericButton = ({ text, onClick, backgroundColor, isBlock }) => (
 );
 
 export default GenericButton;
+
+GenericButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  backgroundColor: PropTypes.string,
+  isBlock: PropTypes.bool,
+};
