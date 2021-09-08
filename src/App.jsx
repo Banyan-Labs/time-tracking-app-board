@@ -26,7 +26,6 @@ const App = () => (
       </Switch>
       <Footer />
     </Router>
-    <SignIn />
   </AuthProvider>
 );
 
