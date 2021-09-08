@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Card } from './style';
-import Input from '../../commons/GenericInput/index';
-import Button from '../../commons/GenericButton/index';
-import { AuthContext } from '../../../Context/AuthContext';
+import Input from '../../commons/genericInput';
+import Button from '../../commons/GenericButton';
+import axios from 'axios';
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -11,26 +11,58 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const store = useContext(AuthContext);
+  // const [user, setUser] = useState({
+  //   firstName,
+  //   lastName,
+  //   emailAddress,
+  //   password,
+  //   confirmPassword,
+  // });
+  let user;
 
   // sends update to context can refactor when time
-  const userUpdate = (e) => {
-    e.preventDefault();
+  // const userUpdate = () => {
+  //   setUser({
+  //     firstName,
+  //     lastName,
+  //     emailAddress,
+  //     password,
+  //     confirmPassword,
+  //   });
+  // };
 
-    store.setCurrentUser({
-      firstName: firstName,
-      lastName: lastName,
-      emailAddress: emailAddress,
-      password: password,
-      confirmPassword: confirmPassword,
-    });
-
-    console.log(store.currentUser, 'click');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // await userUpdate();
+    // setUser({
+    //   firstName,
+    //   lastName,
+    //   emailAddress,
+    //   password,
+    //   confirmPassword,
+    // });
+    user = {
+      firstName,
+      lastName,
+      emailAddress,
+      password,
+      confirmPassword,
+    };
+    // console.log('submit handler user' , user);
+    // return user;
+    axios
+      .post('http://127.0.0.1:8080/api/test', user)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
   };
-
+  // console.log(firstName, user)
   return (
     <Card>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Input
           placeholder={'First Name'}
           value={firstName}
@@ -66,9 +98,9 @@ const SignUp = () => {
           type='text'
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <Button text={'Submit'} onClick={userUpdate} />
-        <Button text={'facebook'} />
-        <Button text={'google'} />
+        <Button text={'Submit'} type='submit' />
+        <Button text={'facebook'} type='button' />
+        <Button text={'google'} type='button' />
       </form>
     </Card>
   );

@@ -23,11 +23,10 @@ const GenericInput = ({
 export default GenericInput;
 
 GenericInput.propTypes = {
-  // text: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   backgroundColor: PropTypes.string,
   isBlock: PropTypes.bool,
   placeholder: PropTypes.string,
   name: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.string.isRequired,
 };

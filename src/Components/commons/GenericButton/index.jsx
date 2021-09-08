@@ -16,7 +16,7 @@ export default GenericButton;
 
 GenericButton.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   backgroundColor: PropTypes.string,
   isBlock: PropTypes.bool,
 };

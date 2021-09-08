@@ -6,6 +6,7 @@ import ServerTests from './ServerTestsComponent';
 import ColorSwatches from './ColorSwatchesComponent';
 import { PageContainer, Container, LinksWrapper, Label } from './style';
 import routes from '../../routes';
+import SignUp from '../userComfermation/SignUp';
 
 const SampleComponent = () => {
   const history = useHistory();
@@ -26,6 +27,17 @@ const SampleComponent = () => {
       </Container>
       <ServerTests />
       <ColorSwatches />
+      <div
+        style={{
+          height: '100vh',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <SignUp />
+      </div>
     </PageContainer>
   );
 };
