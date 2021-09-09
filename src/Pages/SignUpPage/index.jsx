@@ -1,10 +1,11 @@
 import React from 'react';
 import { PageContainer } from './style';
+import SignUp from '../../Components/userComfermation/SignUp';
 
 const SignUpPage = () => {
   return (
     <PageContainer>
-      <h1>SignUp Page</h1>
+      <SignUp />
     </PageContainer>
   );
 };
