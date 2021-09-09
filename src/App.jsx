@@ -7,7 +7,6 @@ import { AuthProvider } from './Context/AuthContext';
 import routes from './routes';
 import { GlobalStyle } from './styles/GlobalStyles';
 import Navbar from './Components/Navbar';
-import SignIn from './Components/userComfermation/SignIn';
 
 const App = () => (
   <AuthProvider>
@@ -25,7 +24,6 @@ const App = () => (
           />
         ))}
       </Switch>
-      <SignIn />
       <Footer />
     </Router>
   </AuthProvider>
