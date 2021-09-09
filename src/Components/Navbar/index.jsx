@@ -20,7 +20,7 @@ const Navbar = () => {
   const [isMobile] = useState(store.isMobile);
   const [isOpen, setIsOpen] = useState(false);
   const [navLinks] = useState(
-    store.isAuth ? ['/dashboard'] : ['/sign-in', '/sign-up']
+    store.isAuth ? ['/dashboard'] : ['/sign-in', '/sign-up', '/dev']
   );
   const history = useHistory();
 

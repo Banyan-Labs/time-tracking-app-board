@@ -1,6 +1,6 @@
+import styled from 'styled-components';
+
 export const InputStyle = styled.input`
-  background: ${({ backgroundColor }) =>
-    backgroundColor ? `${background}` : '#FA0'};
   width: ${({ isBlock }) => (isBlock ? '100%' : 'auto')};
   padding: 5px 8px;
   border-radius: 5px 0 5px 0;

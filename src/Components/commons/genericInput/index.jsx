@@ -1,21 +1,23 @@
 import React from 'react';
 import { InputStyle } from './style';
+import PropTypes from 'prop-types';
 
-const GenericButton = ({
-  placeholder,
-  text,
-  onChange,
-  backgroundColor,
-  isBlock,
-}) => (
+const GenericInput = ({ placeholder, onChange, isBlock, type, name }) => (
   <InputStyle
     onChange={onChange}
-    backgroundColor={backgroundColor}
     isBlock={isBlock}
     placeholder={placeholder}
-  >
-    {text}
-  </InputStyle>
+    name={name}
+    type={type}
+  />
 );
 
-export default GenericButton;
+export default GenericInput;
+
+GenericInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  isBlock: PropTypes.bool,
+  placeholder: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+};
