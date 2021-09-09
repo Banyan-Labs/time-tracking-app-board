@@ -1,31 +1,34 @@
-import React, { useContext, useState } from 'react';
-import { Card } from './style';
+import React, { useState } from 'react';
+import { Card, Form } from './style';
 import Input from '../../commons/GenericInput/index';
 import Button from '../../commons/GenericButton/index';
-import { AuthContext } from '../../../Context/AuthContext';
+import axios from 'axios';
 
 const SignIn = () => {
   const [emailAddress, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
 
-  const store = useContext(AuthContext);
+  let user;
 
-  console.log(emailAddress, password, store, 'looking');
-  // sends update to context can refactor when time
-  const userUpdate = (e) => {
-    e.preventDefault();
-
-    store.setCurrentUser({
-      emailAddress: emailAddress,
-      password: password,
-    });
-
-    console.log(store.currentUser, 'click');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    user = {
+      emailAddress,
+      password,
+    };
+    axios
+      .post('http://127.0.0.1:8080/api/test', user)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log('error', err);
+      });
   };
 
   return (
     <Card>
-      <form>
+      <Form onSubmit={handleSubmit}>
         <Input
           placeholder={'Email Address'}
           value={emailAddress}
@@ -41,10 +44,10 @@ const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <Button text={'Submit'} onClick={userUpdate} />
-        <Button text={'facebook'} />
-        <Button text={'google'} />
-      </form>
+        <Button text={'Submit'} type='submit' />
+        <Button text={'facebook'} type='button' />
+        <Button text={'google'} type='button' />
+      </Form>
     </Card>
   );
 };
