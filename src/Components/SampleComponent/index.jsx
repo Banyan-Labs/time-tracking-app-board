@@ -26,6 +26,15 @@ const SampleComponent = () => {
       </Container>
       <ServerTests />
       <ColorSwatches />
+      <div
+        style={{
+          height: '100vh',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      ></div>
     </PageContainer>
   );
 };
