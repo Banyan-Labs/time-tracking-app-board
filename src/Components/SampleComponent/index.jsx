@@ -6,7 +6,6 @@ import ServerTests from './ServerTestsComponent';
 import ColorSwatches from './ColorSwatchesComponent';
 import { PageContainer, Container, LinksWrapper, Label } from './style';
 import routes from '../../routes';
-import SignUp from '../userComfermation/SignUp';
 
 const SampleComponent = () => {
   const history = useHistory();
@@ -35,9 +34,7 @@ const SampleComponent = () => {
           justifyContent: 'center',
           alignItems: 'center',
         }}
-      >
-        <SignUp />
-      </div>
+      ></div>
     </PageContainer>
   );
 };

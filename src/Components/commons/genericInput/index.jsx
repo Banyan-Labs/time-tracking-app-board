@@ -2,17 +2,9 @@ import React from 'react';
 import { InputStyle } from './style';
 import PropTypes from 'prop-types';
 
-const GenericInput = ({
-  placeholder,
-  onChange,
-  backgroundColor,
-  isBlock,
-  type,
-  name,
-}) => (
+const GenericInput = ({ placeholder, onChange, isBlock, type, name }) => (
   <InputStyle
     onChange={onChange}
-    backgroundColor={backgroundColor}
     isBlock={isBlock}
     placeholder={placeholder}
     name={name}
@@ -24,9 +16,8 @@ export default GenericInput;
 
 GenericInput.propTypes = {
   onChange: PropTypes.func.isRequired,
-  backgroundColor: PropTypes.string,
   isBlock: PropTypes.bool,
   placeholder: PropTypes.string,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
 };

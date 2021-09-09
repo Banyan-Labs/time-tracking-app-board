@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card } from './style';
-import Input from '../../commons/genericInput';
+import Input from '../../commons/GenericInput';
 import Button from '../../commons/GenericButton';
 import axios from 'axios';
 
@@ -11,36 +11,10 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // const [user, setUser] = useState({
-  //   firstName,
-  //   lastName,
-  //   emailAddress,
-  //   password,
-  //   confirmPassword,
-  // });
   let user;
-
-  // sends update to context can refactor when time
-  // const userUpdate = () => {
-  //   setUser({
-  //     firstName,
-  //     lastName,
-  //     emailAddress,
-  //     password,
-  //     confirmPassword,
-  //   });
-  // };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // await userUpdate();
-    // setUser({
-    //   firstName,
-    //   lastName,
-    //   emailAddress,
-    //   password,
-    //   confirmPassword,
-    // });
     user = {
       firstName,
       lastName,
@@ -48,8 +22,6 @@ const SignUp = () => {
       password,
       confirmPassword,
     };
-    // console.log('submit handler user' , user);
-    // return user;
     axios
       .post('http://127.0.0.1:8080/api/test', user)
       .then((res) => {
@@ -59,7 +31,6 @@ const SignUp = () => {
         console.log('error', err);
       });
   };
-  // console.log(firstName, user)
   return (
     <Card>
       <form onSubmit={handleSubmit}>
