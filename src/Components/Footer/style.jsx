@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors, testColors } from '../../styles/Color';
 
 export const Container = styled.div`
   position: fixed;
@@ -8,7 +9,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #030305;
+  background: ${testColors.black5};
   padding: 0.2rem calc((100vw - 1000px) / 2);
   max-height: 30px;
 `;
@@ -16,14 +17,14 @@ export const Container = styled.div`
 export const AppTitle = styled.div`
   font-family: 'Roboto';
   font-weight: 400;
-  color: #fefefe;
-  font-size: clamp(18px, 4vw, 18px);
+  color: ${colors.white};
+  font-size: clamp(min.14px, max.22px);
   cursor: pointer;
 `;
 export const CompanyWrapper = styled.div`
   font-family: 'Roboto';
   font-weight: 500;
-  color: #fefefe;
-  font-size: clamp(18px, 4vw, 18px);
+  color: ${colors.white};
+  font-size: clamp(min.14px, max.22px);
   cursor: pointer;
 `;
