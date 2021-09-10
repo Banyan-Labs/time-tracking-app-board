@@ -18,13 +18,13 @@ export const AppTitle = styled.div`
   font-family: 'Roboto';
   font-weight: 400;
   color: ${colors.white};
-  font-size: clamp(min.14px, max.22px);
+  font-size: clamp(14px, 4vw, 22px);
   cursor: pointer;
 `;
 export const CompanyWrapper = styled.div`
   font-family: 'Roboto';
   font-weight: 500;
   color: ${colors.white};
-  font-size: clamp(min.14px, max.22px);
+  font-size: clamp(14px, 4vw, 22px);
   cursor: pointer;
 `;
