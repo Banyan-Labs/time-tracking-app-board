@@ -5,7 +5,6 @@ import CtaComponent from '../../Components/CTA';
 const LandingPage = () => {
   return (
     <PageContainer>
-      <h1>Landing Page</h1>
       <CtaComponent />
     </PageContainer>
   );
