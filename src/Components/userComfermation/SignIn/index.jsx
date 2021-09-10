@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card } from './style';
+import { Card, Form } from './style';
 import Input from '../../commons/GenericInput/index';
 import Button from '../../commons/GenericButton/index';
 import axios from 'axios';
@@ -28,7 +28,7 @@ const SignIn = () => {
 
   return (
     <Card>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Input
           placeholder={'Email Address'}
           value={emailAddress}
@@ -47,7 +47,7 @@ const SignIn = () => {
         <Button text={'Submit'} type='submit' />
         <Button text={'facebook'} type='button' />
         <Button text={'google'} type='button' />
-      </form>
+      </Form>
     </Card>
   );
 };
