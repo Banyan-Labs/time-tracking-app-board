@@ -6,18 +6,18 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-  font-family: Georgia;
+  font-family: 'Roboto', sans-serif;
   font-size: 52px;
   font-weight: 500;
 `;
 
 export const Description = styled.p`
-  font-family: Georgia;
+  font-family: 'Roboto', sans-serif;
   font-size: 24px;
 `;
 
 export const Button = styled.button`
-  font-family: Georgia;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 300;
 `;
