@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, Description, Button, Container } from './style.';
+import { Title, Description, Button, Container } from './style';
 import { useHistory } from 'react-router-dom';
 
 function handleClick() {
