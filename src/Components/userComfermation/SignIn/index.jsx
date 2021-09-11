@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Card, Form } from './style';
 import Input from '../../commons/GenericInput/index';
 import Button from '../../commons/GenericButton/index';
 import axios from 'axios';
+import { AuthContext } from '../../../Context/AuthContext';
 
 const SignIn = () => {
-  const [emailAddress, setEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
+  const [emailAddress, setEmailAddress] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const store = useContext(AuthContext);
+
+  console.log(store, 'looking at store');
 
   let user;
 
@@ -17,9 +22,10 @@ const SignIn = () => {
       password,
     };
     axios
-      .post('http://127.0.0.1:8080/api/test', user)
+      .post('http://127.0.0.1:8080/api/SignIn', user)
       .then((res) => {
-        console.log(res);
+        store.setCurrentUser(res.data);
+        // console.log(res, "looking");
       })
       .catch((err) => {
         console.log('error', err);
