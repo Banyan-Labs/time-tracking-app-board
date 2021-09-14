@@ -33,6 +33,10 @@ const DashboardPage = () => {
 
   var sortedProjects = workedHourList
     .sort((a, b) => {
+      console.log(
+        new Date(a.scheduled_for).getTime() -
+          new Date(b.scheduled_for).getTime()
+      );
       return (
         new Date(a.scheduled_for).getTime() -
         new Date(b.scheduled_for).getTime()
