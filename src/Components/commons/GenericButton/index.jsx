@@ -9,6 +9,8 @@ const GenericButton = ({
   backgroundColor,
   isBlock,
   type,
+  lightText,
+  fontWeight,
 }) => (
   <ButtonStyle
     onClick={onClick}
@@ -16,6 +18,8 @@ const GenericButton = ({
     isBlock={isBlock}
     type={type}
     margin={margin}
+    lightText={lightText}
+    fontWeight={fontWeight}
   >
     {text}
   </ButtonStyle>
@@ -27,7 +31,9 @@ GenericButton.propTypes = {
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   backgroundColor: PropTypes.string,
+  lightText: PropTypes.bool,
   isBlock: PropTypes.bool,
   margin: PropTypes.bool,
+  fontWeight: PropTypes.bool,
   type: PropTypes.string.isRequired,
 };

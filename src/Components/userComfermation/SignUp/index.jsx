@@ -6,6 +6,7 @@ import {
   ButtonSection,
   BorderContainer,
   BorderLine,
+  Assistance,
 } from './style';
 import Input from '../../commons/GenericInput';
 import Button from '../../commons/GenericButton';
@@ -71,7 +72,7 @@ const SignUp = () => {
           placeholder={'Password'}
           value={password}
           name='password'
-          type='text'
+          type='password'
           onChange={(e) => setPassword(e.target.value)}
         />
         <Input
@@ -79,14 +80,25 @@ const SignUp = () => {
           placeholder={'Confirm Password'}
           value={confirmPassword}
           name='confirmPassword'
-          type='text'
+          type='password'
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
+
+        <Assistance>
+          <label>
+            <input type='checkbox' />
+            Remember Me
+          </label>
+          <a href='#'>Forgot Password</a>
+        </Assistance>
+
         <Button
           text={'Sign In'}
           type='submit'
           backgroundColor={colors.green}
+          lightText
           isBlock
+          fontWeight
         />
 
         <BorderContainer>
@@ -97,13 +109,45 @@ const SignUp = () => {
 
         <ButtonSection>
           <ButtonContainer>
-            <Button margin isBlock text={'facebook'} type='button' />
-            <Button margin isBlock text={'google'} type='button' />
+            <Button
+              margin
+              isBlock
+              text={'google'}
+              backgroundColor='#DB4437'
+              lightText
+              type='button'
+              fontWeight
+            />
+            <Button
+              margin
+              isBlock
+              text={'LinkedIn'}
+              backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
+            />
           </ButtonContainer>
 
           <ButtonContainer>
-            <Button margin isBlock text={'LinkedIn'} type='button' />
-            <Button margin isBlock text={'GitHub'} type='button' />
+            <Button
+              margin
+              isBlock
+              text={'facebook'}
+              backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
+            />
+            <Button
+              margin
+              isBlock
+              text={'GitHub'}
+              backgroundColor={colors.black}
+              lightText
+              type='button'
+              fontWeight
+            />
           </ButtonContainer>
         </ButtonSection>
       </Form>

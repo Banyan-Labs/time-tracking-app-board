@@ -6,10 +6,10 @@ export const ButtonStyle = styled.button`
     backgroundColor ? `${backgroundColor}` : '#FA0'};
   width: ${({ isBlock }) => (isBlock ? '100%' : 'auto')};
   margin: ${({ margin }) => (margin ? '5px 0px 5px 0px' : '0px')};
-  color: ${({ color }) => (color ? `${color}` : colors.black)};
+  color: ${({ lightText }) => (lightText ? colors.white : colors.black)};
+  font-weight: ${({ fontWeight }) => (fontWeight ? 'bold' : 'none')};
   padding: 5px 8px;
-
-  border-radius: 5px 0 5px 0;
+  border-radius: 3px 3px 3px 3px;
   border: none;
   :focus {
     border: none;

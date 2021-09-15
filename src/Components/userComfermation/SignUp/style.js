@@ -51,3 +51,10 @@ export const BorderLine = styled.div`
   width: 180px;
   margin: 0px 10px 0px 10px;
 `;
+
+export const Assistance = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 5px 0 5px 0;
+`;
