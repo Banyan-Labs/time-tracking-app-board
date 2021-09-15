@@ -1,25 +1,39 @@
-import React, { useState } from 'react';
-import { Card, Form } from './style';
+import React, { useContext, useState } from 'react';
+import {
+  Card,
+  Form,
+  ButtonContainer,
+  ButtonSection,
+  BorderContainer,
+  BorderLine,
+} from './style';
 import Input from '../../commons/GenericInput/index';
 import Button from '../../commons/GenericButton/index';
 import axios from 'axios';
+import { AuthContext } from '../../../Context/AuthContext';
+import { colors } from '../../../styles/Color';
 
 const SignIn = () => {
-  const [emailAddress, setEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const store = useContext(AuthContext);
+
+  console.log(store, 'looking at store');
 
   let user;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     user = {
-      emailAddress,
+      email,
       password,
     };
     axios
-      .post('http://127.0.0.1:8080/api/test', user)
+      .post('https://tta-backend.herokuapp.com/api/test/login', user)
       .then((res) => {
-        console.log(res);
+        store.setCurrentUser(res.data);
+        // console.log(res, "looking");
       })
       .catch((err) => {
         console.log('error', err);
@@ -30,23 +44,45 @@ const SignIn = () => {
     <Card>
       <Form onSubmit={handleSubmit}>
         <Input
+          isBlock
           placeholder={'Email Address'}
-          value={emailAddress}
+          value={email}
           name='emailAddress'
           type='text'
-          onChange={(e) => setEmailAddress(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Password'}
           value={password}
           name='password'
           type='text'
           onChange={(e) => setPassword(e.target.value)}
         />
+        <Button
+          text={'Sign In'}
+          type='submit'
+          backgroundColor={colors.green}
+          isBlock
+        />
 
-        <Button text={'Submit'} type='submit' />
-        <Button text={'facebook'} type='button' />
-        <Button text={'google'} type='button' />
+        <BorderContainer>
+          <BorderLine />
+          <p>or</p>
+          <BorderLine />
+        </BorderContainer>
+
+        <ButtonSection>
+          <ButtonContainer>
+            <Button margin isBlock text={'facebook'} type='button' />
+            <Button margin isBlock text={'google'} type='button' />
+          </ButtonContainer>
+
+          <ButtonContainer>
+            <Button margin isBlock text={'LinkedIn'} type='button' />
+            <Button margin isBlock text={'GitHub'} type='button' />
+          </ButtonContainer>
+        </ButtonSection>
       </Form>
     </Card>
   );

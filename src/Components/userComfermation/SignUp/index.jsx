@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
-import { Card, Form } from './style';
+import {
+  Card,
+  Form,
+  ButtonContainer,
+  ButtonSection,
+  BorderContainer,
+  BorderLine,
+} from './style';
 import Input from '../../commons/GenericInput';
 import Button from '../../commons/GenericButton';
 import axios from 'axios';
+import { colors } from '../../../styles/Color';
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -35,6 +43,7 @@ const SignUp = () => {
     <Card>
       <Form onSubmit={handleSubmit}>
         <Input
+          isBlock
           placeholder={'First Name'}
           value={firstName}
           type='text'
@@ -42,6 +51,7 @@ const SignUp = () => {
           onChange={(e) => setFirstName(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Last Name'}
           value={lastName}
           name='lastName'
@@ -49,6 +59,7 @@ const SignUp = () => {
           onChange={(e) => setLastName(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Email Address'}
           value={emailAddress}
           name='emailAddress'
@@ -56,6 +67,7 @@ const SignUp = () => {
           onChange={(e) => setEmailAddress(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Password'}
           value={password}
           name='password'
@@ -63,15 +75,37 @@ const SignUp = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Confirm Password'}
           value={confirmPassword}
           name='confirmPassword'
           type='text'
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <Button text={'Submit'} type='submit' />
-        <Button text={'facebook'} type='button' />
-        <Button text={'google'} type='button' />
+        <Button
+          text={'Sign In'}
+          type='submit'
+          backgroundColor={colors.green}
+          isBlock
+        />
+
+        <BorderContainer>
+          <BorderLine />
+          <p>or</p>
+          <BorderLine />
+        </BorderContainer>
+
+        <ButtonSection>
+          <ButtonContainer>
+            <Button margin isBlock text={'facebook'} type='button' />
+            <Button margin isBlock text={'google'} type='button' />
+          </ButtonContainer>
+
+          <ButtonContainer>
+            <Button margin isBlock text={'LinkedIn'} type='button' />
+            <Button margin isBlock text={'GitHub'} type='button' />
+          </ButtonContainer>
+        </ButtonSection>
       </Form>
     </Card>
   );
