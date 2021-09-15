@@ -74,13 +74,37 @@ const SignIn = () => {
 
         <ButtonSection>
           <ButtonContainer>
-            <Button margin isBlock text={'facebook'} type='button' />
-            <Button margin isBlock text={'google'} type='button' />
+            <Button
+              margin
+              isBlock
+              text={'Google'}
+              type='button'
+              backgroundColor='#DB4437'
+            />
+            <Button
+              margin
+              isBlock
+              text={'LinkedIn'}
+              type='button'
+              backgroundColor='#4267B2'
+            />
           </ButtonContainer>
 
           <ButtonContainer>
-            <Button margin isBlock text={'LinkedIn'} type='button' />
-            <Button margin isBlock text={'GitHub'} type='button' />
+            <Button
+              margin
+              isBlock
+              text={'Facebook'}
+              type='button'
+              backgroundColor='#4267B2'
+            />
+            <Button
+              margin
+              isBlock
+              text={'GitHub'}
+              type='button'
+              backgroundColor={colors.black}
+            />
           </ButtonContainer>
         </ButtonSection>
       </Form>

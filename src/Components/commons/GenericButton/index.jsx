@@ -2,12 +2,20 @@ import React from 'react';
 import { ButtonStyle } from './style';
 import PropTypes from 'prop-types';
 
-const GenericButton = ({ text, onClick, backgroundColor, isBlock, type }) => (
+const GenericButton = ({
+  margin,
+  text,
+  onClick,
+  backgroundColor,
+  isBlock,
+  type,
+}) => (
   <ButtonStyle
     onClick={onClick}
     backgroundColor={backgroundColor}
     isBlock={isBlock}
     type={type}
+    margin={margin}
   >
     {text}
   </ButtonStyle>
@@ -20,5 +28,6 @@ GenericButton.propTypes = {
   onClick: PropTypes.func,
   backgroundColor: PropTypes.string,
   isBlock: PropTypes.bool,
+  margin: PropTypes.bool,
   type: PropTypes.string.isRequired,
 };
