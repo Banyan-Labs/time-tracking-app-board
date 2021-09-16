@@ -7,6 +7,8 @@ export const NavbarContainer = styled.nav`
   background: ${colors.green};
   height: 80px;
   display: flex;
+  top: 0;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem calc((100vw - 1000px) / 2);

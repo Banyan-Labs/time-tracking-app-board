@@ -1,25 +1,30 @@
 import styled from 'styled-components';
+import { colors, testColors } from '../../styles/Color';
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: burlywood;
-  padding: 25px 15px;
+  background: ${testColors.black5};
+  padding: 0.2rem calc((100vw - 1000px) / 2);
   max-height: 30px;
 `;
 
 export const AppTitle = styled.div`
-  font-size: 22px;
+  font-family: 'Roboto';
   font-weight: 400;
+  color: ${colors.white};
+  font-size: clamp(14px, 4vw, 22px);
   cursor: pointer;
 `;
 export const CompanyWrapper = styled.div`
-  font-size: 18px;
+  font-family: 'Roboto';
   font-weight: 500;
+  color: ${colors.white};
+  font-size: clamp(14px, 4vw, 22px);
   cursor: pointer;
 `;
