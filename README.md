@@ -36,4 +36,3 @@ run command `npm start`
 - Ashley Thomas (Developer)
 - James Gonzles (Developer)
 - Joshua Beets (Developer)
-
