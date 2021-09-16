@@ -10,7 +10,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   background: ${testColors.black5};
-  padding: 0.2rem calc((100vw - 1000px) / 2);
+  padding: 0.2rem calc((100vw - 1300px) / 2);
   max-height: 30px;
 `;
 
