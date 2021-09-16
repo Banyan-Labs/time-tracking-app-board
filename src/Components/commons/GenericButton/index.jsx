@@ -12,17 +12,20 @@ const GenericButton = ({
   type,
   lightText,
   fontWeight,
-  Icon,
-  logo,
+  IconG,
+  IconF,
+  IconL,
+  IconGH,
+  fontSize,
+  padding,
 }) => {
-  let name = logo;
-  console.log(Icon, logo, Icons);
+  const googleIcons = <Span>{Icons.google}</Span>;
 
-  const RenderIcons = (
-    <Span>
-      {Icons.google} {console.log(name, 'looking')}
-    </Span>
-  );
+  const facebookIcons = <Span>{Icons.facebook}</Span>;
+
+  const linkedinIcons = <Span>{Icons.linkedin}</Span>;
+
+  const githubIcons = <Span>{Icons.github}</Span>;
 
   return (
     <ButtonStyle
@@ -33,9 +36,13 @@ const GenericButton = ({
       margin={margin}
       lightText={lightText}
       fontWeight={fontWeight}
-      logo={logo}
+      fontSize={fontSize}
+      padding={padding}
     >
-      {Icon && RenderIcons}
+      {IconG && googleIcons}
+      {IconF && facebookIcons}
+      {IconL && linkedinIcons}
+      {IconGH && githubIcons}
       {text}
     </ButtonStyle>
   );
@@ -52,6 +59,10 @@ GenericButton.propTypes = {
   margin: PropTypes.bool,
   fontWeight: PropTypes.bool,
   type: PropTypes.string.isRequired,
-  Icon: PropTypes.bool,
-  logo: PropTypes.string,
+  IconG: PropTypes.bool,
+  IconF: PropTypes.bool,
+  IconL: PropTypes.bool,
+  IconGH: PropTypes.bool,
+  fontSize: PropTypes.string,
+  padding: PropTypes.string,
 };

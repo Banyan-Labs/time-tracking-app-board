@@ -101,6 +101,8 @@ const SignUp = () => {
           lightText
           isBlock
           fontWeight
+          fontSize='24px'
+          padding='5px 8px'
         />
 
         <BorderContainer>
@@ -119,8 +121,8 @@ const SignUp = () => {
               lightText
               type='button'
               fontWeight
-              Icon
-              logo={'google'}
+              fontSize='24px'
+              IconG
             />
             <Button
               margin
@@ -130,6 +132,8 @@ const SignUp = () => {
               lightText
               type='button'
               fontWeight
+              fontSize='24px'
+              IconL
             />
           </ButtonContainer>
 
@@ -142,6 +146,8 @@ const SignUp = () => {
               lightText
               type='button'
               fontWeight
+              fontSize='24px'
+              IconF
             />
             <Button
               margin
@@ -151,6 +157,8 @@ const SignUp = () => {
               lightText
               type='button'
               fontWeight
+              fontSize='24px'
+              IconGH
             />
           </ButtonContainer>
         </ButtonSection>

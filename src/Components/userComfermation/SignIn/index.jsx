@@ -66,7 +66,6 @@ const SignIn = () => {
           </label>
           <a href='#'>Forgot Password</a>
         </Assistance>
-
         <Button
           text={'Sign In'}
           type='submit'
@@ -74,6 +73,8 @@ const SignIn = () => {
           lightText
           isBlock
           fontWeight
+          fontSize='24px'
+          padding='5px 8px'
         />
 
         <BorderContainer>
@@ -92,8 +93,8 @@ const SignIn = () => {
               lightText
               type='button'
               fontWeight
-              Icon
-              logo={'google'}
+              fontSize='24px'
+              IconG
             />
             <Button
               margin
@@ -103,6 +104,8 @@ const SignIn = () => {
               lightText
               type='button'
               fontWeight
+              fontSize='24px'
+              IconL
             />
           </ButtonContainer>
 
@@ -115,6 +118,8 @@ const SignIn = () => {
               lightText
               type='button'
               fontWeight
+              fontSize='24px'
+              IconF
             />
             <Button
               margin
@@ -124,12 +129,14 @@ const SignIn = () => {
               lightText
               type='button'
               fontWeight
+              fontSize='24px'
+              IconGH
             />
           </ButtonContainer>
         </ButtonSection>
         <Question>Why Create An Account</Question>
         <p>
-          By creating this account,you agree to our <A>Privacy Policy</A> &{' '}
+          By creating this account,you agree to our <A>Privacy Policy</A> &
           <A>Cookie Policy</A>
         </p>
       </Form>
