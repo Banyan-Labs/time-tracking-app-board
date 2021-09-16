@@ -1,15 +1,20 @@
-import SampleComponent from '../Components/SampleComponent';
-import LandingPage from '../Pages/LandingPage';
-import DashboardPage from '../Pages/DashboardPage';
-import SignUpPage from '../Pages/SignUpPage';
-import SignInPage from '../Pages/SignInPage';
-
 const routes = [
-  { path: '/', component: LandingPage, isProtected: false },
-  { path: '/sign-up', component: SignUpPage, isProtected: false },
-  { path: '/sign-in', component: SignInPage, isProtected: false },
-  { path: '/dashboard', component: DashboardPage, isProtected: false },
-  { path: '/dev', component: SampleComponent, isProtected: false },
+  { path: "/", component: () => <h2>Landing Page</h2>, isProtected: false },
+  {
+    path: "/sign-up",
+    component: () => <h2>Sign up page</h2>,
+    isProtected: false,
+  },
+  {
+    path: "/sign-in",
+    component: () => <h2>SIgn in page</h2>,
+    isProtected: false,
+  },
+  {
+    path: "/dashboard",
+    component: () => <h2>Dashboard page</h2>,
+    isProtected: false,
+  },
 ];
 
 export default routes;
