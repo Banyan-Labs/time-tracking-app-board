@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [user, setUser] = useState(null);
   const [isAuth, setIsAuth] = useState(false);
 
   /* isMobile is not updating on active window resizing */
@@ -15,8 +15,8 @@ export const AuthProvider = ({ children }) => {
   }, [window.innerWidth]);
 
   const state = {
-    currentUser,
-    setCurrentUser,
+    user,
+    setUser,
     isAuth,
     setIsAuth,
     isMobile,
