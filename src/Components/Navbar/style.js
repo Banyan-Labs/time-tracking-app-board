@@ -11,7 +11,7 @@ export const NavbarContainer = styled.nav`
   position: sticky;
   justify-content: space-between;
   align-items: center;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
+  padding: 0.2rem calc((100vw - 1300px) / 2);
   z-index: 12;
   overflow: hidden;
 `;

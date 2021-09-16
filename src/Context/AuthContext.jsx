@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [user, setUser] = useState(null);
   const [isAuth, setIsAuth] = useState(false);
+  // const [user, setUser] = useState({ userId: "1", firstName: "Zaphod", lastName: "Beeblebrox", email: "hitchhicker@galaxy.net"});
+  // const [isAuth, setIsAuth] = useState(true);
 
   /* isMobile is not updating on active window resizing */
   // const isMobile = window.innerWidth < 425;
@@ -15,8 +17,8 @@ export const AuthProvider = ({ children }) => {
   }, [window.innerWidth]);
 
   const state = {
-    currentUser,
-    setCurrentUser,
+    user,
+    setUser,
     isAuth,
     setIsAuth,
     isMobile,
@@ -26,5 +28,5 @@ export const AuthProvider = ({ children }) => {
 };
 
 AuthProvider.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.array.isRequired,
 };

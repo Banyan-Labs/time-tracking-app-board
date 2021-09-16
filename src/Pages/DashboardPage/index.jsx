@@ -1,12 +1,4 @@
-import React from 'react';
-import { PageContainer } from './style';
-
-const DashboardPage = () => {
-  return (
-    <PageContainer>
-      <h1>Dashboard Page</h1>
-    </PageContainer>
-  );
-};
+// import DashboardPage from "./Old-DashboardPage";
+import DashboardPage from './New-DashboardPage';
 
 export default DashboardPage;

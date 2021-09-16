@@ -15,41 +15,51 @@ import Button from '../../commons/GenericButton/index';
 import axios from 'axios';
 import { AuthContext } from '../../../Context/AuthContext';
 import { colors } from '../../../styles/Color';
+import { useHistory } from 'react-router-dom';
 
 const SignIn = () => {
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [emailAddress, setEmailAddress] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const store = useContext(AuthContext);
-
-  let user;
+  const history = useHistory();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    user = {
-      email,
+    setErrorMessage(null);
+    let requestBody = {
+      email: emailAddress,
       password,
     };
     axios
-      .post('https://tta-backend.herokuapp.com/api/test/login', user)
+      .post('https://tta-backend.herokuapp.com/api/test/login', requestBody)
       .then((res) => {
-        store.setCurrentUser(res.data);
+        const { error, message, user } = res.data;
+        if (error) {
+          setErrorMessage(message);
+        } else {
+          store.setUser(user);
+          store.setIsAuth(true);
+          history.push('/dashboard');
+        }
       })
       .catch((err) => {
-        console.log('error', err);
+        console.log('error:', err);
       });
   };
 
   return (
     <Card>
+      {errorMessage && <p>{errorMessage}</p>}
       <Form onSubmit={handleSubmit}>
         <Input
           isBlock
           placeholder={'Email Address'}
-          value={email}
+          value={emailAddress}
           name='emailAddress'
           type='text'
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmailAddress(e.target.value)}
         />
         <Input
           isBlock
