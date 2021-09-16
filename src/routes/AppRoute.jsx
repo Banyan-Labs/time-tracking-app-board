@@ -1,14 +1,16 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import React, { useContext } from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
+import PropTypes from 'prop-types';
 
 const AppRoute = ({ isProtected, ...rest }) => {
-  const isAuth = true;
+  const store = useContext(AuthContext);
   return (
     <Route
       render={(props) =>
-        isProtected && !isAuth ? (
+        isProtected && !store.isAuth ? (
           <Redirect
-            to={{ pathname: "/sign-in", state: { from: props.location } }}
+            to={{ pathname: '/sign-in', state: { from: props.location } }}
           />
         ) : (
           <Route {...rest} />
@@ -19,3 +21,8 @@ const AppRoute = ({ isProtected, ...rest }) => {
 };
 
 export default AppRoute;
+
+AppRoute.propTypes = {
+  isProtected: PropTypes.bool,
+  location: PropTypes.object,
+};
