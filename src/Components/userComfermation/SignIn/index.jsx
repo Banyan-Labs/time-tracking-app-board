@@ -1,10 +1,21 @@
-import React, { useState, useContext } from 'react';
-import { AuthContext } from '../../../Context/AuthContext';
-import { useHistory } from 'react-router';
-import { Card, Form } from './style';
+import React, { useContext, useState } from 'react';
+import {
+  Card,
+  Form,
+  ButtonContainer,
+  ButtonSection,
+  BorderContainer,
+  BorderLine,
+  Assistance,
+  Question,
+  A,
+} from './style';
 import Input from '../../commons/GenericInput/index';
 import Button from '../../commons/GenericButton/index';
 import axios from 'axios';
+import { AuthContext } from '../../../Context/AuthContext';
+import { colors } from '../../../styles/Color';
+import { useHistory } from 'react-router-dom';
 
 const SignIn = () => {
   const [emailAddress, setEmailAddress] = useState('');
@@ -22,7 +33,6 @@ const SignIn = () => {
       password,
     };
     axios
-      // .post('http://127.0.0.1:8080/api/test/login', requestBody)
       .post('https://tta-backend.herokuapp.com/api/test/login', requestBody)
       .then((res) => {
         const { error, message, user } = res.data;
@@ -44,6 +54,7 @@ const SignIn = () => {
       {errorMessage && <p>{errorMessage}</p>}
       <Form onSubmit={handleSubmit}>
         <Input
+          isBlock
           placeholder={'Email Address'}
           value={emailAddress}
           name='emailAddress'
@@ -51,16 +62,93 @@ const SignIn = () => {
           onChange={(e) => setEmailAddress(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Password'}
           value={password}
           name='password'
-          type='text'
+          type='password'
           onChange={(e) => setPassword(e.target.value)}
         />
+        <Assistance>
+          <label>
+            <input type='checkbox' />
+            Remember Me
+          </label>
+          <a href='#'>Forgot Password</a>
+        </Assistance>
+        <Button
+          text={'Sign In'}
+          type='submit'
+          backgroundColor={colors.green}
+          lightText
+          isBlock
+          fontWeight
+          fontSize='24px'
+          padding='5px 8px'
+        />
 
-        <Button text={'Submit'} type='submit' />
-        <Button text={'facebook'} type='button' />
-        <Button text={'google'} type='button' />
+        <BorderContainer>
+          <BorderLine />
+          <p>or</p>
+          <BorderLine />
+        </BorderContainer>
+
+        <ButtonSection>
+          <ButtonContainer>
+            <Button
+              margin
+              isBlock
+              text={'google'}
+              backgroundColor='#DB4437'
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconG
+            />
+            <Button
+              margin
+              isBlock
+              text={'LinkedIn'}
+              backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconL
+            />
+          </ButtonContainer>
+
+          <ButtonContainer>
+            <Button
+              margin
+              isBlock
+              text={'facebook'}
+              backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconF
+            />
+            <Button
+              margin
+              isBlock
+              text={'GitHub'}
+              backgroundColor={colors.black}
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconGH
+            />
+          </ButtonContainer>
+        </ButtonSection>
+        <Question>Why Create An Account</Question>
+        <p>
+          By creating this account,you agree to our <A>Privacy Policy</A> &
+          <A>Cookie Policy</A>
+        </p>
       </Form>
     </Card>
   );

@@ -1,8 +1,19 @@
 import React, { useState } from 'react';
-import { Card, Form } from './style';
+import {
+  Card,
+  Form,
+  ButtonContainer,
+  ButtonSection,
+  BorderContainer,
+  BorderLine,
+  Assistance,
+  Question,
+  A,
+} from './style';
 import Input from '../../commons/GenericInput';
 import Button from '../../commons/GenericButton';
 import axios from 'axios';
+import { colors } from '../../../styles/Color';
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState('');
@@ -35,6 +46,7 @@ const SignUp = () => {
     <Card>
       <Form onSubmit={handleSubmit}>
         <Input
+          isBlock
           placeholder={'First Name'}
           value={firstName}
           type='text'
@@ -42,6 +54,7 @@ const SignUp = () => {
           onChange={(e) => setFirstName(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Last Name'}
           value={lastName}
           name='lastName'
@@ -49,6 +62,7 @@ const SignUp = () => {
           onChange={(e) => setLastName(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Email Address'}
           value={emailAddress}
           name='emailAddress'
@@ -56,22 +70,103 @@ const SignUp = () => {
           onChange={(e) => setEmailAddress(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Password'}
           value={password}
           name='password'
-          type='text'
+          type='password'
           onChange={(e) => setPassword(e.target.value)}
         />
         <Input
+          isBlock
           placeholder={'Confirm Password'}
           value={confirmPassword}
           name='confirmPassword'
-          type='text'
+          type='password'
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <Button text={'Submit'} type='submit' />
-        <Button text={'facebook'} type='button' />
-        <Button text={'google'} type='button' />
+
+        <Assistance>
+          <label>
+            <input type='checkbox' />
+            Remember Me
+          </label>
+          <a href='#'>Forgot Password</a>
+        </Assistance>
+
+        <Button
+          text={'Sign In'}
+          type='submit'
+          backgroundColor={colors.green}
+          lightText
+          isBlock
+          fontWeight
+          fontSize='24px'
+          padding='5px 8px'
+        />
+
+        <BorderContainer>
+          <BorderLine />
+          <p>or</p>
+          <BorderLine />
+        </BorderContainer>
+
+        <ButtonSection>
+          <ButtonContainer>
+            <Button
+              margin
+              isBlock
+              text={'google'}
+              backgroundColor='#DB4437'
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconG
+            />
+            <Button
+              margin
+              isBlock
+              text={'LinkedIn'}
+              backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconL
+            />
+          </ButtonContainer>
+
+          <ButtonContainer>
+            <Button
+              margin
+              isBlock
+              text={'facebook'}
+              backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconF
+            />
+            <Button
+              margin
+              isBlock
+              text={'GitHub'}
+              backgroundColor={colors.black}
+              lightText
+              type='button'
+              fontWeight
+              fontSize='24px'
+              IconGH
+            />
+          </ButtonContainer>
+        </ButtonSection>
+        <Question>Why Create An Account</Question>
+        <p>
+          By creating this account,you agree to our <A>Privacy Policy</A> &{' '}
+          <A>Cookie Policy</A>
+        </p>
       </Form>
     </Card>
   );
