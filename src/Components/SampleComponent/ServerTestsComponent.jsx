@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Button from '../commons/GenericButton';
+import Button from '../commons/ui/GenericButton';
 import {
   ServerTestContainer,
   ServerTestWrapper,

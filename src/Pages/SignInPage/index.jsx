@@ -1,6 +1,6 @@
 import React from 'react';
 import { PageContainer } from './style';
-import SignIn from '../../Components/userComfermation/SignIn';
+import SignIn from '../../Components/userAuthComponents/SignIn';
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
 

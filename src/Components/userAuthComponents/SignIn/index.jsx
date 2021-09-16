@@ -10,8 +10,8 @@ import {
   Question,
   A,
 } from './style';
-import Input from '../../commons/GenericInput/index';
-import Button from '../../commons/GenericButton/index';
+import Input from '../../commons/ui/GenericInput/index';
+import Button from '../../commons/ui/GenericButton/index';
 import axios from 'axios';
 import { AuthContext } from '../../../Context/AuthContext';
 import { colors } from '../../../styles/Color';
@@ -74,7 +74,7 @@ const SignIn = () => {
             <input type='checkbox' />
             Remember Me
           </label>
-          <a href='#'>Forgot Password</a>
+          <a href='_'>Forgot Password</a>
         </Assistance>
         <Button
           text={'Sign In'}
@@ -82,7 +82,7 @@ const SignIn = () => {
           backgroundColor={colors.green}
           lightText
           isBlock
-          fontWeight
+          // fontWeight={true}
           fontSize='24px'
           padding='5px 8px'
         />
@@ -102,7 +102,7 @@ const SignIn = () => {
               backgroundColor='#DB4437'
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconG
             />
@@ -113,7 +113,7 @@ const SignIn = () => {
               backgroundColor='#4267B2'
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconL
             />
@@ -127,7 +127,7 @@ const SignIn = () => {
               backgroundColor='#4267B2'
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconF
             />
@@ -138,7 +138,7 @@ const SignIn = () => {
               backgroundColor={colors.black}
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconGH
             />

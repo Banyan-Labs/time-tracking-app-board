@@ -10,8 +10,8 @@ import {
   Question,
   A,
 } from './style';
-import Input from '../../commons/GenericInput';
-import Button from '../../commons/GenericButton';
+import Input from '../../commons/ui/GenericInput';
+import Button from '../../commons/ui/GenericButton';
 import axios from 'axios';
 import { colors } from '../../../styles/Color';
 
@@ -91,7 +91,7 @@ const SignUp = () => {
             <input type='checkbox' />
             Remember Me
           </label>
-          <a href='#'>Forgot Password</a>
+          <a href='_'>Forgot Password</a>
         </Assistance>
 
         <Button
@@ -100,7 +100,7 @@ const SignUp = () => {
           backgroundColor={colors.green}
           lightText
           isBlock
-          fontWeight
+          // fontWeight={true}
           fontSize='24px'
           padding='5px 8px'
         />
@@ -120,7 +120,7 @@ const SignUp = () => {
               backgroundColor='#DB4437'
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconG
             />
@@ -131,7 +131,7 @@ const SignUp = () => {
               backgroundColor='#4267B2'
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconL
             />
@@ -145,7 +145,7 @@ const SignUp = () => {
               backgroundColor='#4267B2'
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconF
             />
@@ -156,7 +156,7 @@ const SignUp = () => {
               backgroundColor={colors.black}
               lightText
               type='button'
-              fontWeight
+              // fontWeight={true}
               fontSize='24px'
               IconGH
             />
