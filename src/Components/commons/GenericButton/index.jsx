@@ -1,6 +1,7 @@
 import React from 'react';
-import { ButtonStyle } from './style';
+import { ButtonStyle, Span } from './style';
 import PropTypes from 'prop-types';
+import { Icons } from '../../../styles/Icons';
 
 const GenericButton = ({
   margin,
@@ -11,19 +12,34 @@ const GenericButton = ({
   type,
   lightText,
   fontWeight,
-}) => (
-  <ButtonStyle
-    onClick={onClick}
-    backgroundColor={backgroundColor}
-    isBlock={isBlock}
-    type={type}
-    margin={margin}
-    lightText={lightText}
-    fontWeight={fontWeight}
-  >
-    {text}
-  </ButtonStyle>
-);
+  Icon,
+  logo,
+}) => {
+  let name = logo;
+  console.log(Icon, logo);
+
+  const RenderIcons = (
+    <Span>
+      {Icons.logo} {console.log(name, 'looking')}
+    </Span>
+  );
+
+  return (
+    <ButtonStyle
+      onClick={onClick}
+      backgroundColor={backgroundColor}
+      isBlock={isBlock}
+      type={type}
+      margin={margin}
+      lightText={lightText}
+      fontWeight={fontWeight}
+      logo={logo}
+    >
+      {RenderIcons}
+      {text}
+    </ButtonStyle>
+  );
+};
 
 export default GenericButton;
 
@@ -36,4 +52,6 @@ GenericButton.propTypes = {
   margin: PropTypes.bool,
   fontWeight: PropTypes.bool,
   type: PropTypes.string.isRequired,
+  Icon: PropTypes.bool,
+  logo: PropTypes.string,
 };

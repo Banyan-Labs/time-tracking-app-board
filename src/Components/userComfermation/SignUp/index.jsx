@@ -117,6 +117,8 @@ const SignUp = () => {
               lightText
               type='button'
               fontWeight
+              Icon
+              logo={'google'}
             />
             <Button
               margin

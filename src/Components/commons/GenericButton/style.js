@@ -19,3 +19,9 @@ export const ButtonStyle = styled.button`
     transform: scale(1.1);
   }
 `;
+
+export const Span = styled.span`
+  border-right: solid ${colors.white} 2px;
+  float: left;
+  width: 11%;
+`;

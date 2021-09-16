@@ -19,8 +19,6 @@ const SignIn = () => {
 
   const store = useContext(AuthContext);
 
-  console.log(store, 'looking at store');
-
   let user;
 
   const handleSubmit = async (event) => {
@@ -33,7 +31,6 @@ const SignIn = () => {
       .post('https://tta-backend.herokuapp.com/api/test/login', user)
       .then((res) => {
         store.setCurrentUser(res.data);
-        // console.log(res, "looking");
       })
       .catch((err) => {
         console.log('error', err);
