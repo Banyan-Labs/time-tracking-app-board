@@ -3,10 +3,8 @@ import { Title, Description, Button, Container } from './style';
 import { useHistory } from 'react-router-dom';
 
 const CtaComponent = () => {
-  function handleClick() {
-    let history = useHistory();
-    history.push('/sign-up');
-  }
+  let history = useHistory();
+
   return (
     <Container>
       <Title>TIME TAB</Title>
@@ -17,7 +15,7 @@ const CtaComponent = () => {
         Voluptatum ducimus voluptates voluptas?
       </Description>
 
-      <Button type='button' onClick={handleClick}>
+      <Button type='button' onClick={() => history.push('/sign-up')}>
         Sign-Up
       </Button>
     </Container>
