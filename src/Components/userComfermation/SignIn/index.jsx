@@ -6,6 +6,9 @@ import {
   ButtonSection,
   BorderContainer,
   BorderLine,
+  Assistance,
+  Question,
+  A,
 } from './style';
 import Input from '../../commons/GenericInput/index';
 import Button from '../../commons/GenericButton/index';
@@ -56,11 +59,21 @@ const SignIn = () => {
           type='password'
           onChange={(e) => setPassword(e.target.value)}
         />
+        <Assistance>
+          <label>
+            <input type='checkbox' />
+            Remember Me
+          </label>
+          <a href='#'>Forgot Password</a>
+        </Assistance>
+
         <Button
           text={'Sign In'}
           type='submit'
           backgroundColor={colors.green}
+          lightText
           isBlock
+          fontWeight
         />
 
         <BorderContainer>
@@ -74,16 +87,22 @@ const SignIn = () => {
             <Button
               margin
               isBlock
-              text={'Google'}
-              type='button'
+              text={'google'}
               backgroundColor='#DB4437'
+              lightText
+              type='button'
+              fontWeight
+              Icon
+              logo={'google'}
             />
             <Button
               margin
               isBlock
               text={'LinkedIn'}
-              type='button'
               backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
             />
           </ButtonContainer>
 
@@ -91,19 +110,28 @@ const SignIn = () => {
             <Button
               margin
               isBlock
-              text={'Facebook'}
-              type='button'
+              text={'facebook'}
               backgroundColor='#4267B2'
+              lightText
+              type='button'
+              fontWeight
             />
             <Button
               margin
               isBlock
               text={'GitHub'}
-              type='button'
               backgroundColor={colors.black}
+              lightText
+              type='button'
+              fontWeight
             />
           </ButtonContainer>
         </ButtonSection>
+        <Question>Why Create An Account</Question>
+        <p>
+          By creating this account,you agree to our <A>Privacy Policy</A> &{' '}
+          <A>Cookie Policy</A>
+        </p>
       </Form>
     </Card>
   );

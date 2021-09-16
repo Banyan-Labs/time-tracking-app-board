@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { colors } from '../../../styles/Color';
 
 export const Card = styled.div`
   display: flex;
@@ -27,9 +28,9 @@ export const ButtonSection = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
-  height: 25%;
+  height: 12%;
 `;
 
 export const ButtonContainer = styled.div`
@@ -57,4 +58,16 @@ export const Assistance = styled.div`
   width: 100%;
   justify-content: space-between;
   padding: 5px 0 5px 0;
+`;
+
+export const Question = styled.div`
+  font-size: 20px;
+  font-weight: 800;
+  color: ${colors.green};
+`;
+
+export const A = styled.a`
+  font-size: 18px;
+  font-weight: 800;
+  color: ${colors.green};
 `;

@@ -16,11 +16,11 @@ const GenericButton = ({
   logo,
 }) => {
   let name = logo;
-  console.log(Icon, logo);
+  console.log(Icon, logo, Icons);
 
   const RenderIcons = (
     <Span>
-      {Icons.logo} {console.log(name, 'looking')}
+      {Icons.google} {console.log(name, 'looking')}
     </Span>
   );
 
@@ -35,7 +35,7 @@ const GenericButton = ({
       fontWeight={fontWeight}
       logo={logo}
     >
-      {RenderIcons}
+      {Icon && RenderIcons}
       {text}
     </ButtonStyle>
   );

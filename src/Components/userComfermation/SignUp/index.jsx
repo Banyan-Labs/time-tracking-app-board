@@ -7,6 +7,8 @@ import {
   BorderContainer,
   BorderLine,
   Assistance,
+  Question,
+  A,
 } from './style';
 import Input from '../../commons/GenericInput';
 import Button from '../../commons/GenericButton';
@@ -152,6 +154,11 @@ const SignUp = () => {
             />
           </ButtonContainer>
         </ButtonSection>
+        <Question>Why Create An Account</Question>
+        <p>
+          By creating this account,you agree to our <A>Privacy Policy</A> &{' '}
+          <A>Cookie Policy</A>
+        </p>
       </Form>
     </Card>
   );
