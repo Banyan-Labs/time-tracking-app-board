@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.body`
   text-align: center;
   padding: 10px, 20px, 10px, 20px;
 `;
 
 export const Title = styled.h1`
-  font-family: 'Roboto', sans-serif;
-  font-size: 52px;
+  font-family: 'Langar', cursive;
+  font-size: 72px;
   font-weight: 500;
+`;
+
+export const Header = styled.p`
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
 `;
 
 export const Description = styled.p`
@@ -19,5 +24,4 @@ export const Description = styled.p`
 export const Button = styled.button`
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  font-weight: 300;
 `;
