@@ -6,11 +6,11 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
-  font-family: 'Audiowide', sans-serif;
+  font-family: 'Audiowide', cursive;
   font-size: 72px;
 `;
 
-export const Header = styled.p`
+export const Header = styled.h2`
   font-family: 'Roboto', sans-serif;
   font-size: 36px;
 `;
