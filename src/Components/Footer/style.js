@@ -20,6 +20,7 @@ export const AppTitle = styled.div`
   color: ${colors.white};
   font-size: clamp(14px, 4vw, 22px);
   cursor: pointer;
+  margin-left: 15px;
 `;
 export const CompanyWrapper = styled.div`
   font-family: 'Roboto';
@@ -27,4 +28,5 @@ export const CompanyWrapper = styled.div`
   color: ${colors.white};
   font-size: clamp(14px, 4vw, 22px);
   cursor: pointer;
+  margin-right: 15px;
 `;
