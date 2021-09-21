@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
-import Button from '../commons/GenericButton';
+import Button from '../commons/ui/GenericButton';
 import ServerTests from './ServerTestsComponent';
 import ColorSwatches from './ColorSwatchesComponent';
 import { PageContainer, Container, LinksWrapper, Label } from './style';

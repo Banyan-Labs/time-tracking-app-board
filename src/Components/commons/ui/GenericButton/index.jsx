@@ -1,7 +1,7 @@
 import React from 'react';
 import { ButtonStyle, Span } from './style';
 import PropTypes from 'prop-types';
-import { Icons } from '../../../styles/Icons';
+import { Icons } from '../../../../styles/Icons';
 
 const GenericButton = ({
   margin,
@@ -11,7 +11,7 @@ const GenericButton = ({
   isBlock,
   type,
   lightText,
-  fontWeight,
+  // fontWeight,
   IconG,
   IconF,
   IconL,
@@ -35,7 +35,7 @@ const GenericButton = ({
       type={type}
       margin={margin}
       lightText={lightText}
-      fontWeight={fontWeight}
+      // fontWeight={fontWeight}
       fontSize={fontSize}
       padding={padding}
     >
@@ -57,7 +57,7 @@ GenericButton.propTypes = {
   lightText: PropTypes.bool,
   isBlock: PropTypes.bool,
   margin: PropTypes.bool,
-  fontWeight: PropTypes.bool,
+  // fontWeight: PropTypes.bool,
   type: PropTypes.string.isRequired,
   IconG: PropTypes.bool,
   IconF: PropTypes.bool,
