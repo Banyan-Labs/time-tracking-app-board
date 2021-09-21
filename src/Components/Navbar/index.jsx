@@ -17,7 +17,8 @@ import Image from '../../resources/images/clockLogo1.png';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const Navbar = () => {
-  const { logout, loginWithRedirect, isAuthenticated } = useAuth0();
+  const { logout, loginWithRedirect, isAuthenticated, isLoading, user } =
+    useAuth0();
   const store = useContext(AuthContext);
   store.setIsAuth(isAuthenticated);
   console.log(store.isAuth, 'looking at Auth');
@@ -26,12 +27,17 @@ const Navbar = () => {
   const [navLinks] = useState(
     store.isAuth ? ['/dashboard'] : ['/sign-in', '/sign-up']
   );
+  const history = useHistory();
 
   useEffect(() => {
-    if (store.isAuth) history.push('/dashboard');
-  }, []);
-
-  const history = useHistory();
+    if (!isLoading && user) {
+      store.setUser({
+        // userId: user.sub,
+        userId: 1,
+      });
+      history.push('/dashboard');
+    }
+  }, [isLoading]);
 
   const toggleIsOpen = () => setIsOpen(!isOpen);
 
