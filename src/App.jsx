@@ -1,23 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
+import AppRoute from './routes/AppRoute';
+import { AuthProvider } from './Context/AuthContext';
+import routes from './routes';
 import { GlobalStyle } from './styles/GlobalStyles';
-import LandingPage from './Pages/LandingPage';
-import DashboardPage from './Pages/DashboardPage';
 
-import PrivateRoute from './routes/PrivateRoute';
-
-const App = () => {
-  return (
-    <React.Fragment>
-      <GlobalStyle />
-      <Router>
-        <Switch>
-          <Route path='/' exact component={LandingPage} />
-          <PrivateRoute path='/dashboard' exact component={DashboardPage} />
-        </Switch>
-      </Router>
-    </React.Fragment>
-  );
-};
+const App = () => (
+  <AuthProvider>
+    <GlobalStyle />
+    <Router>
+      <Switch>
+        {routes.map((route) => (
+          <AppRoute
+            isProtected={route.isProtected}
+            exact
+            key={uuid()}
+            path={route.path}
+            component={route.component}
+          />
+        ))}
+      </Switch>
+    </Router>
+  </AuthProvider>
+);
 
 export default App;

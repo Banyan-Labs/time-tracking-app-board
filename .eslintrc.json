@@ -5,8 +5,5 @@
     "react/button-has-type": "warn",
     "react/jsx-filename-extension": "warn",
     "react/react-in-jsx-scope": "warn"
-  },
-  "globals": {
-    "process": true
   }
 }
