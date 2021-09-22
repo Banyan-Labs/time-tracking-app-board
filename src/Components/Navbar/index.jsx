@@ -21,7 +21,6 @@ const Navbar = () => {
     useAuth0();
   const store = useContext(AuthContext);
   store.setIsAuth(isAuthenticated);
-  console.log(store.isAuth, 'looking at Auth');
   const [isMobile] = useState(store.isMobile);
   const [isOpen, setIsOpen] = useState(false);
   const [navLinks] = useState(
