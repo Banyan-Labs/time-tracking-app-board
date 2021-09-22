@@ -1,5 +1,5 @@
 import React from 'react';
-import { Title, Description, Button, Container } from './style';
+import { Title, Header, Description, Button, Container } from './style';
 import { useHistory } from 'react-router-dom';
 
 const CtaComponent = () => {
@@ -8,11 +8,12 @@ const CtaComponent = () => {
   return (
     <Container>
       <Title>TIME TAB</Title>
+      <Header>How Does It Increase Productivity?</Header>
       <Description>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi non
-        quis exercitationem culpa nesciunt nihil aut nostrum explicabo
-        reprehenderit optio amet ab temporibus asperiores quasi cupiditate.
-        Voluptatum ducimus voluptates voluptas?
+        It helps with Time Management Success. It always leaves evidance of
+        Effort, Follow-Through and Achievement. With TIME TAB you keep working
+        while we track the clock. The hours that Ordinary people waste,
+        Extrodinary people leverage.
       </Description>
 
       <Button type='button' onClick={() => history.push('/sign-up')}>

@@ -6,9 +6,13 @@ export const Container = styled.section`
 `;
 
 export const Title = styled.h1`
+  font-family: 'Audiowide', cursive;
+  font-size: 72px;
+`;
+
+export const Header = styled.h2`
   font-family: 'Roboto', sans-serif;
-  font-size: 52px;
-  font-weight: 500;
+  font-size: 36px;
 `;
 
 export const Description = styled.p`
@@ -19,5 +23,4 @@ export const Description = styled.p`
 export const Button = styled.button`
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
-  font-weight: 300;
 `;
