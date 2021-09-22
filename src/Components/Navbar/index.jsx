@@ -30,9 +30,8 @@ const Navbar = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (!isLoading && user) {
+    if (!isLoading && user && isAuthenticated) {
       store.setUser({
-        // userId: user.sub,
         userId: 1,
       });
       history.push('/dashboard');

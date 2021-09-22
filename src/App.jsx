@@ -1,9 +1,6 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// import { v4 as uuid } from 'uuid';
-// import AppRoute from './routes/AppRoute';
 import { AuthContext } from './Context/AuthContext';
-// import routes from './routes';
 import { GlobalStyle } from './styles/GlobalStyles';
 import { useAuth0 } from '@auth0/auth0-react';
 import LandingPage from './Pages/LandingPage';
