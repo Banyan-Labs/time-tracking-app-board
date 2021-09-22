@@ -3,13 +3,12 @@ import { PageContainer } from './style';
 import CtaComponent from '../../Components/CTA';
 import Navbar from '../../Components/Navbar';
 import Footer from '../../Components/Footer';
-import background from '../../resources/images/gold.png';
 
 const LandingPage = () => {
   return (
     <React.Fragment>
       <Navbar />
-      <PageContainer style={{ backgroundImage: `url(${background})` }}>
+      <PageContainer>
         <CtaComponent />
       </PageContainer>
       <Footer />
