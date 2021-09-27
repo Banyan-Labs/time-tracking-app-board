@@ -28,6 +28,8 @@ const Navbar = () => {
   );
   const history = useHistory();
 
+  console.log(user, 'testing user');
+
   useEffect(() => {
     if (!isLoading && user && isAuthenticated) {
       store.setUser({
