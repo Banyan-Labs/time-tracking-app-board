@@ -35,7 +35,7 @@ const Navbar = () => {
       store.setUser({
         userId: 1,
       });
-      history.push('/dashboard');
+      // history.push('/dashboard');
     }
   }, [isLoading]);
 
