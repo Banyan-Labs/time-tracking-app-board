@@ -12,7 +12,6 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
-  font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 300;
 `;
