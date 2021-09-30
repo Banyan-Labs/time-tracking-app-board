@@ -13,7 +13,7 @@ export const NavbarContainer = styled.nav`
   align-items: center;
   padding: 0.2rem calc((100vw - 1300px) / 2);
   z-index: 12;
-  overflow: hidden;
+  overflow: visible;
 `;
 
 export const LogoWrapper = styled.div`
