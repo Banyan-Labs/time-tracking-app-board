@@ -16,8 +16,9 @@ const DashboardPage = () => {
       .post(`${store.backendEnv}/api/user`, {
         ...store.user,
       })
-      .then((res) => {
-        store.setUser(res.data.userProfile);
+      .then(async (res) => {
+        const response = await res;
+        store.setUser(response.data.userProfile);
       })
       .catch((err) => console.log(err));
   }, []);
