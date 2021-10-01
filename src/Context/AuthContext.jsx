@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
     isAuth,
     setIsAuth,
     isMobile,
-    backendEnv: database.local,
+    backendEnv: database.live,
   };
 
   return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;
