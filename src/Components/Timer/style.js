@@ -42,7 +42,9 @@ export const TimeText = styled.span`
   font-family: 'Audiowide';
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  margin-left: auto;
+`;
 
 export const TimeDescription = styled.input`
   font-family: 'Roboto';
