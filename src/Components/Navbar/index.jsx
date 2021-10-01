@@ -32,6 +32,7 @@ const Navbar = () => {
     if (!isLoading && user && isAuthenticated) {
       store.setUser({
         userId: 1,
+        ...user,
       });
       history.push('/dashboard');
     }
