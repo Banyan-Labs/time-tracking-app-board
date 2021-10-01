@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { database } from '../config/dbConnectionURL';
 
 export const AuthContext = createContext();
 
@@ -22,6 +23,7 @@ export const AuthProvider = ({ children }) => {
     isAuth,
     setIsAuth,
     isMobile,
+    backendEnv: database.local,
   };
 
   return <AuthContext.Provider value={state}>{children}</AuthContext.Provider>;

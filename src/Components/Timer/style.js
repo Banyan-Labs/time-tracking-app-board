@@ -24,6 +24,10 @@ export const ToggleButton = styled.button`
     transform: translateY(2px);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   }
+
+  &:disabled {
+    opacity: 0.4;
+  }
 `;
 
 export const TimeWrapper = styled.div`
